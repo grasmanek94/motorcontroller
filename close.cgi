@@ -1,6 +1,4 @@
 #!/bin/bash
-stty -F /dev/ttyACM0 raw speed 9600 > /dev/null 2>&1
-printf "CloseMainDoor2834\n" > /dev/ttyACM0
-awk "/SOK/ {exit;} {print;}" < /dev/ttyACM0 > /dev/null
-sleep 2
-printf "Location: https://192.168.2.246\n\n";
+stty -F /dev/ttyACM0 -hupcl raw speed 9600 > /dev/null 2>&1
+printf "\nCloseMainDoor2834\n" > /dev/ttyACM0
+printf "Location: https://door.fiber.gz0.nl\n\n";
